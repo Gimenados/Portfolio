@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:ital,wght@0,100;0,900;1,100;1,900&display=swap');
+
+body {
+    background: radial-gradient(ellipse, #030d2b, #02071A, #030d2b);   
+    font-family: "Gowun Batang", serif;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.fondo-container {
+    background: url(fondo4.jpg) center/cover fixed;
+    opacity: 0.9;
+    height: 50rem;
+}
+
+
+/* MENU */
+
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    width: 100%;
+}
+
+header {
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(10px); /* Desenfoque */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000 !important;
+    width: 60%;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px; 
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+nav li {
+    font-size: 22px;
+    margin: 0 10px 0 10px;
+    transition: opacity 0.3s ease; 
+}
+
+.icon-navbar {
+    vertical-align: sub;
+    margin: 0 8px;
+}
+
+h2 {
+    background: linear-gradient(61deg, #fc29a1, #470a7c, #085c98);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Barlow", serif !important;
+}
+
+nav a, nav li {  
+    color: white; 
+    display: inline-block; 
+    font-weight: 400;  
+    position: relative; 
+    text-decoration: none;  
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+a:hover {  
+    font-weight: 500;
+}
+
+/* Subrayado animado */
+header nav ul li a::after {
+    background-color: currentColor; 
+    bottom: -2px; /* Ajusta la posición del subrayado */
+    content: '';
+    height: 2px; 
+    left: 0;
+    position: relative;
+    transition: width 0.3s ease; 
+    width: 0; 
+  }
+  
+  /* Cuando se hace hover en un li, los demás li se vuelven transparentes */
+  header nav ul:hover li {
+    opacity: 0.6; 
+  }
+  
+  /* El li que tiene el hover mantiene su opacidad */
+  header nav ul li:hover {
+    opacity: 1; /* Opacidad completa */
+  }
+  
+  /* Efecto de subrayado al hacer hover en el enlace */
+  header nav ul li:hover a::after {
+    width: 100%; /* Ancho completo al hacer hover */
+  }
+  
+  /* Opcional: Para excluir el primer li (el de la clase "icon") del efecto */
+  header nav ul li.icon {
+    opacity: 1 !important; /* Siempre visible */
+    pointer-events: none; /* Ignora el hover */
+  }
+
+
+/* INICIO */
+  
+.hero {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 50rem;
+}
+
+h1, h2, p {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.icon-container {
+    display: flex;
+    gap: 40px;
+    position: relative;
+    flex-direction: row;
+    z-index: 3;
+}
+
+.icon-container a {
+    align-items: center;
+    background-color: #6b15b6;
+    border-radius: 50%;
+    position: relative;
+    justify-content: center;
+    height: 55px;
+    width: 55px;
+}
+
+.icon-container a:hover {
+    background-color: #085c98;
+    filter: drop-shadow(1px 1px 30px #0a3655);
+}
+
+.icon {
+    fill: rgb(5, 5, 5); 
+    transition: fill 0.3s ease !important; 
+    height: 55px;
+    width: 55px;
+}
+
+h2 {
+    font-size: 130px;
+    transition: all .2s;
+}
+
+h3 {
+    color: #6b15b6;
+    font-size: 35px !important;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.perfil-img {
+    border-radius: 50%;
+    border: 2px solid #0b4066;
+    margin: 10px 40px 10px 20px;
+    height: 250px;
+    width: 250px;
+    z-index: 5;
+}
+
+
+/* SOBRE MI */
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin-top: 60px;
+    margin-bottom: 90px;
+}
+
+.about-title {
+    align-self: start !important;
+    font-size: 50px !important;
+    margin-bottom: 35px !important;
+    text-align: start;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 50px;
+    text-align: justify; 
+}
+
+
+/* TECNOLOGIAS Y CARRUSEL */
+
+
+
+article {
+    display: flex;
+    justify-content: center;
+}
+
+.container-tecnology {
+    display: flex;
+    max-width: 900px;
+    margin-top: 60px;
+    margin-bottom: 70px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.section-avatar {
+    margin: 0 0 0 30px; 
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; 
+    width: 160px; 
+    height: 160px;
+}
+
+.avatar {
+    width: 100%; 
+    height: auto; /* Mantiene la proporción de la imagen */
+    filter: drop-shadow(1px 1px 30px #0a3655);
+    z-index: 5;
+}
+
+.avatar:hover {
+    filter: drop-shadow(1px 1px 30px #406783);
+    cursor: pointer;
+}
+
+.carrusel {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carrusel-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.carrusel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 5em; 
+    text-align: center;
+    padding: 20px;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 40px;
+    width: max-content; 
+    animation: scrollLeft 15s linear infinite; 
+}
+
+.carrusel-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.carrusel-item p {
+    font-size: 1rem;
+    color: #f0eaea;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translate3d(0, 0, 0); /* Inicia en la posición original */
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0); /* Desplaza la mitad del ancho del track */
+    }
+}
+
+footer {
+    background: url(fondo4.jpg) center/cover fixed;
+    padding: 20px 0 10px 0;
+}
+
