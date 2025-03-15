@@ -10,7 +10,7 @@ body {
 }
 
 .fondo-container {
-    background: url(fondo4.jpg) center/cover fixed;
+    background: url(image/fondo4.jpg) center/cover fixed;
     opacity: 0.9;
     height: 50rem;
 }
