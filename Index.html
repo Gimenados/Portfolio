@@ -169,8 +169,24 @@
     
 </section>
 
-<div class="header">
+<section class="container">
+    <h2 class="about-title">Contacto</h2> 
     
+    <form action="mailto:tu-correo@ejemplo.com" method="POST" enctype="text/plain">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+    
+    <button type="submit">Enviar</button>
+</form>
+</section>
+
+<div class="header">
     <div>
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -185,7 +201,7 @@
     </g>
     </svg>
     </div>    
-    </div>
+</div>
     
     <!--Content starts-->
     <div class="content flex">
@@ -195,7 +211,6 @@
         </footer>
     </div>
     <!--Content ends-->
-
     <script src="script.js"></script>
 </body>
 </html>
