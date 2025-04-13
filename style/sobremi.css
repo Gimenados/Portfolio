@@ -1,0 +1,109 @@
+/* SOBRE MI */
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin-top: 20px;
+  margin-bottom: 90px;
+}
+
+.about-title {
+  align-self: start !important;
+  font-size: 50px !important;
+  margin-bottom: 35px !important;
+  text-align: start;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 50px;
+  text-align: justify;
+}
+
+/* TARJETAS */
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.3);
+}
+
+.card {
+  width: var(--card-width);
+  height: 32vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+  background: linear-gradient(61deg, #120a55, #040122);
+}
+.card .cover-image {
+  width: 100% !important;
+  height: 25vh !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card .wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+}
+.card .wrapper:hover {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+.card .wrapper::before, .card .wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 20px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.card .wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(to top, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgb(12, 13, 19) 97%);
+}
+.card .wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgb(12, 13, 19) 97%);
+}
+.card .wrapper:hover::before, .card .wrapper:hover::after {
+  opacity: 1;
+}
+.card .wrapper:hover::after {
+  height: 120px;
+}
+.card .title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.card .title:hover {
+  transform: translate3d(0%, -50px, 100px);
+}
+.card .character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: 2;
+}
+.card .character:hover {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}/*# sourceMappingURL=sobremi.css.map */

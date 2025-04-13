@@ -17,9 +17,11 @@ body {
 }
 
 .fondo-container {
-    background: url(image/fondo4.jpg) center/cover fixed;
+    background: url(../image/fondo4.jpg) center/cover fixed;
     opacity: 0.9;
     height: 50rem;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -30,12 +32,12 @@ body {
     justify-content: space-around;
     padding: 20px 0;
     width: 100%;
-}
-
-header {
+  }
+  
+  header {
     align-items: center;
-    background: transparent;
-    backdrop-filter: blur(10px); /* Desenfoque */
+    backdrop-filter: blur(10px) !important; /* Desenfoque */
+    /* background: transparent; */
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
     display: flex;
@@ -61,7 +63,7 @@ nav li {
 }
 
 .icon-navbar {
-    vertical-align: sub;
+  vertical-align: sub;
     margin: 0 8px;
 }
 
@@ -116,8 +118,6 @@ a:hover {
   animation-delay: 1.5s;
   opacity: 0;
 }
-
-/* Keyframes */
 
 @keyframes slideDown {
   from {
@@ -272,24 +272,53 @@ h1, h2, p {
 h2 {
     font-size: 130px;
     transition: all .2s;
-}
-
-h3 {
+  }
+  
+  h3 {
     color: #6b15b6;
     font-size: 35px !important;
     margin-bottom: 20px;
     font-weight: 600;
-}
-
-.perfil-img {
+  }
+  
+  .perfil-img {
     border-radius: 50%;
     border: 2px solid #0b4066;
     margin: 10px 40px 10px 20px;
     height: 250px;
     width: 250px;
     z-index: 5;
-}
-
+  }
+  
+  p {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    font-size:14px;
+    color: rgb(234, 228, 228);
+  }
+  
+  .flex { /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .waves {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+  }
+  
+  .content {
+    position:relative;
+    height:20vh;
+    text-align:center;
+    background-color: white;
+  }
 
 /* SOBRE MI */
 
@@ -306,7 +335,7 @@ h3 {
     font-size: 50px !important;
     margin-bottom: 35px !important;
     text-align: start;
-    margin-top: 10px !important;
+    /* margin-top: 10px !important; */
 }
 
 .about-container {
@@ -354,7 +383,6 @@ h3 {
     transition: all 0.5s;
     position: absolute;
     width: 100%;
-    z-index: -1;
   }
   
   .card:hover .wrapper {
@@ -416,7 +444,7 @@ h3 {
     opacity: 0;
     transition: all 0.5s;
     position: absolute;
-    z-index: -1;
+    z-index: 2;;
   }
   
   .card:hover .character {
@@ -448,6 +476,7 @@ article {
     align-items: flex-start;
     justify-content: center; 
     width: 120px; 
+    z-index: 0;
     height: 120px;
 }
 
@@ -456,7 +485,6 @@ article {
   height: auto; /* Mantiene la proporción de la imagen */
   filter: drop-shadow(1px 1px 30px #0a3655);
   z-index: 5;
-
   /* Inicialmente fuera de pantalla */
   transform: translateX(100px);
   opacity: 0;
@@ -472,7 +500,6 @@ article {
   filter: drop-shadow(1px 1px 30px #406783);
   cursor: pointer;
 }
-
 
 .carrusel {
     display: flex;
@@ -519,7 +546,7 @@ article {
 
 .carrusel-item p {
     font-size: 1rem;
-    color: #f0eaea;
+    color: transparent !important;
 }
 
 @keyframes scrollLeft {
@@ -530,35 +557,44 @@ article {
         transform: translate3d(-50%, 0, 0); /* Desplaza la mitad del ancho del track */
     }
 }
-/* 
-footer {
-    background: url(fondo4.jpg) center/cover fixed;
-    padding: 20px 0 10px 0;
-} */
 
-/* Formulario de contacto] */
+/* FORMULARIO DE CONTACTO */
 
 form {
   padding: 20px;
   max-width: 500px;
   margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 14px 20px 2px 19px rgba(0, 0, 30) ;
+  border: 1px solid #030d2b;
+  box-shadow: inset;
 }
 
 input, textarea {
   width: 100%;
   padding: 10px;
+  color: transparent;
   margin-top: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border: none;
+  border-bottom: 1px solid white;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0); /* opcional */
+  caret-color: white; /* para que el cursor se vea */
+}
+
+input:focus, textarea:focus {
+  color: white; /* texto visible al hacer focus */
+}
+
+label {
+  color: white;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
 button {
   margin-top: 15px;
   padding: 10px 20px;
-  background: #4CAF50;
+  background: #9e4caf;
   color: white;
   border: none;
   border-radius: 5px;
@@ -575,38 +611,8 @@ button:hover {
     background: radial-gradient(ellipse, #030d2b, #02071A, #030d2b);
   }
 
-  /* #fc29a1, #470a7c, #085c98 */
-  p {
-    font-family: 'Lato', sans-serif;
-    letter-spacing: 1px;
-    font-size:14px;
-    color: rgb(234, 228, 228);
-  }
-
-  .flex { /*Flexbox for containers*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
   
-  .waves {
-    position:relative;
-    width: 100%;
-    height:15vh;
-    margin-bottom:-7px; /*Fix for safari gap*/
-    min-height:100px;
-    max-height:150px;
-  }
-  
-  .content {
-    position:relative;
-    height:20vh;
-    text-align:center;
-    background-color: white;
-  }
-  
-  /* Animation */
+  /* ANIMACION */
   
   .parallax > use {
     animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
@@ -627,6 +633,7 @@ button:hover {
     animation-delay: -5s;
     animation-duration: 20s;
   }
+  
   @keyframes move-forever {
     0% {
      transform: translate3d(-90px,0,0);
@@ -635,7 +642,6 @@ button:hover {
       transform: translate3d(85px,0,0);
     }
   }
-  /*Shrinking for mobile*/
   @media (max-width: 768px) {
     .waves {
       height:40px;

@@ -1,0 +1,222 @@
+@import 'variables';  // Importas el archivo de variables
+@import 'animacion';
+@import 'sobremi';
+@import 'carrusel';
+@import 'formulario';
+
+// Base
+* {
+  font-family: $font-main !important;
+}
+
+body {
+  background: $bg-gradient !important;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.fondo-container {
+  background: url(../image/fondo4.jpg) center/cover fixed;
+  opacity: 0.9;
+  height: 50rem;
+  position: relative;
+  z-index: 1;
+}
+
+// Header & Nav
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  width: 100%;
+}
+
+header {
+  align-items: center;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px $color-shadow;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 1000 !important;
+  width: 60%;
+
+  nav {
+    ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 10px 0;
+
+      li {
+        font-size: 22px;
+        margin: 0 10px;
+        transition: opacity $transition-fast;
+
+        &.icon {
+          opacity: 1 !important;
+          pointer-events: none;
+        }
+
+        a {
+          color: white;
+          display: inline-block;
+          font-weight: 400;
+          text-decoration: none;
+          transition: color $transition-fast;
+
+          &::after {
+            background-color: currentColor;
+            bottom: -2px;
+            content: '';
+            height: 2px;
+            left: 0;
+            position: relative;
+            transition: width $transition-fast;
+            width: 0;
+          }
+        }
+
+        &:hover a::after {
+          width: 100%;
+        }
+      }
+
+      &:hover li {
+        opacity: 0.6;
+      }
+
+      li:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.icon-navbar {
+  vertical-align: sub;
+  margin: 0 8px;
+}
+
+// Títulos
+h1, h2, p {
+  color: $color-text;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+h2 {
+  background: $gradient-title;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: $font-title !important;
+  font-size: $h2-size;
+  transition: all .2s;
+}
+
+h3 {
+  color: $color-primary;
+  font-size: $h3-size !important;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+p {
+  font-family: $font-secondary;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: $color-subtext;
+}
+
+// Hero
+.hero {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 50rem;
+
+  h1 {
+    animation: slideDown 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  h2 {
+    animation: scaleRotateIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
+
+  p {
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+}
+
+// Iconos
+.icon-container {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  flex-direction: row;
+  z-index: 3;
+
+  a {
+    align-items: center;
+    background-color: $color-primary;
+    border-radius: 50%;
+    justify-content: center;
+    position: relative;
+    height: 55px;
+    width: 55px;
+
+    &:hover {
+      background-color: $color-hover;
+      filter: drop-shadow(1px 1px 30px #0a3655);
+    }
+  }
+}
+
+.icon {
+  fill: rgb(5, 5, 5);
+  transition: fill $transition-fast !important;
+  height: 55px;
+  width: 55px;
+}
+
+.perfil-img {
+  border-radius: 50%;
+  border: 2px solid $color-border;
+  margin: 10px 40px 10px 20px;
+  height: 250px;
+  width: 250px;
+  z-index: 5;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}

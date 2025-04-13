@@ -1,0 +1,131 @@
+@import 'variables';  // Importas el archivo de variables
+
+/* ANIMACION */
+
+.ring {
+    position: relative; // Esto permite que los hijos (las i) se posicionen correctamente
+    display: block; // Asegura que el contenedor de anillos esté en el flujo del documento
+    width: 250px; // Ajusta el tamaño según la imagen
+    height: 250px; // Ajusta el tamaño según la imagen
+    margin: auto; // Para centrar el div ring dentro de su contenedor
+  
+    i {
+      position: absolute;
+      border: 2px solid #470a7c;
+      border-radius: 50%; // Hace que los elementos sean circulares
+      display: block !important; // Para que los elementos sean visibles
+  
+      &:nth-child(1) {
+        width: 100%; // Ajusta el tamaño según lo necesites
+        height: 100%; // Ajusta el tamaño según lo necesites
+        animation: animate 6s linear infinite; // Llama a la animación
+  
+        &:hover {
+          border: 4px solid #aa1f6e;
+          filter: drop-shadow(0 0 20px #aa1f6e);
+        }
+      }
+  
+      &:nth-child(2) {
+        width: 110%; // Aumenta el tamaño para dar un efecto de anillo
+        height: 110%; // Aumenta el tamaño para dar un efecto de anillo
+        animation: animate 4s linear infinite; // Llama a la animación
+  
+        &:hover {
+          border: 4px solid #470a7c;
+          filter: drop-shadow(0 0 20px #470a7c);
+        }
+      }
+  
+      &:nth-child(3) {
+        width: 120%;
+        height: 120%;
+        animation: animate2 10s linear infinite; // Llama a la animación
+  
+        &:hover {
+          border: 4px solid #0b4066;
+          filter: drop-shadow(0 0 20px #0b4066);
+        }
+      }
+    }
+  }
+  
+  /* Animaciones */
+  @keyframes animate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes animate2 {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+// Animaciones
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleRotateIn {
+  from {
+    transform: scale(0.5) rotate(-15deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.about-title {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all $transition-medium;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
