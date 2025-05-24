@@ -24,6 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
     aboutTitles.forEach(title => observer.observe(title));
     observer.observe(avatar);
 
+    function mostrarImagen(rutaImagen, cardElement) {  
+    // Cambiar la imagen de la parte inferior  
+    const imagenBaja = document.getElementById('imagen-baja');  
+    imagenBaja.src = rutaImagen;  
+    imagenBaja.style.display = "block"; // Hacer visible la imagen  
+
+    // Aplicar la inclinación a la imagen anterior  
+    cardElement.querySelector('.character').classList.toggle('inclinada');  
+}  
 });
 
 

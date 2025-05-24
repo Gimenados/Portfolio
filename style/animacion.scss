@@ -1,7 +1,5 @@
 @import 'variables';  // Importas el archivo de variables
 
-/* ANIMACION */
-
 .ring {
     position: relative; // Esto permite que los hijos (las i) se posicionen correctamente
     display: block; // Asegura que el contenedor de anillos esté en el flujo del documento
@@ -50,7 +48,6 @@
     }
   }
   
-  /* Animaciones */
   @keyframes animate {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
@@ -63,7 +60,6 @@
     100% { transform: scale(1); }
   }
 
-// Animaciones
 @keyframes slideDown {
   from {
     transform: translateY(-50px);
@@ -129,3 +125,4 @@
     transform: translateY(0);
   }
 }
+

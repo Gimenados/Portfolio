@@ -1,10 +1,9 @@
-@import 'variables';  // Importas el archivo de variables
-@import 'animacion';
+@import 'variables';
 @import 'sobremi';
 @import 'carrusel';
+@import 'animacion';
 @import 'formulario';
 
-// Base
 * {
   font-family: $font-main !important;
 }
@@ -17,6 +16,8 @@ body {
   text-align: center;
 }
 
+// HEADER Y NAVBAR
+
 .fondo-container {
   background: url(../image/fondo4.jpg) center/cover fixed;
   opacity: 0.9;
@@ -25,7 +26,6 @@ body {
   z-index: 1;
 }
 
-// Header & Nav
 .nav-container {
   display: flex;
   justify-content: space-around;
@@ -34,23 +34,22 @@ body {
 }
 
 header {
+  @include flex-center; 
   align-items: center;
   backdrop-filter: blur(10px) !important;
   border-radius: 15px;
   box-shadow: 0 4px 8px $color-shadow;
-  display: flex;
-  justify-content: center;
   position: fixed;
-  z-index: 1000 !important;
   width: 60%;
+  z-index: 1000 !important;
 
   nav {
     ul {
       display: flex;
       gap: 20px;
-      list-style: none;
       margin: 0;
       padding: 10px 0;
+      list-style: none;
 
       li {
         font-size: 22px;
@@ -70,14 +69,14 @@ header {
           transition: color $transition-fast;
 
           &::after {
-            background-color: currentColor;
-            bottom: -2px;
             content: '';
-            height: 2px;
-            left: 0;
             position: relative;
-            transition: width $transition-fast;
+            bottom: -2px;
+            left: 0;
+            height: 2px;
             width: 0;
+            background-color: currentColor;
+            transition: width $transition-fast;
           }
         }
 
@@ -88,10 +87,11 @@ header {
 
       &:hover li {
         opacity: 0.6;
-      }
 
-      li:hover {
-        opacity: 1;
+        &.icon,
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
@@ -102,7 +102,8 @@ header {
   margin: 0 8px;
 }
 
-// Títulos
+// TITULOS 
+
 h1, h2, p {
   color: $color-text;
   font-weight: 600;
@@ -115,7 +116,8 @@ h2 {
   -webkit-text-fill-color: transparent;
   font-family: $font-title !important;
   font-size: $h2-size;
-  transition: all .2s;
+  transition: all 0.2s;
+  text-shadow: $shadow-x $shadow-y $shadow-blur $shadow-color;
 }
 
 h3 {
@@ -132,33 +134,8 @@ p {
   color: $color-subtext;
 }
 
-// Hero
-.hero {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 50rem;
+// ICONOS 
 
-  h1 {
-    animation: slideDown 1s ease-out forwards;
-    opacity: 0;
-  }
-
-  h2 {
-    animation: scaleRotateIn 1s ease-out forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
-  }
-
-  p {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 1s;
-    opacity: 0;
-  }
-}
-
-// Iconos
 .icon-container {
   display: flex;
   gap: 40px;

@@ -1,5 +1,135 @@
 @charset "UTF-8";
-/* TECNOLOGIAS Y CARRUSEL */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Boldonse&family=Bungee+Tint&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:ital,wght@0,100;0,900;1,100;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Boldonse&family=Bungee+Tint&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:ital,wght@0,100;0,900;1,100;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+.ring {
+  position: relative;
+  display: block;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+}
+.ring i {
+  position: absolute;
+  border: 2px solid #470a7c;
+  border-radius: 50%;
+  display: block !important;
+}
+.ring i:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  animation: animate 6s linear infinite;
+}
+.ring i:nth-child(1):hover {
+  border: 4px solid #aa1f6e;
+  filter: drop-shadow(0 0 20px #aa1f6e);
+}
+.ring i:nth-child(2) {
+  width: 110%;
+  height: 110%;
+  animation: animate 4s linear infinite;
+}
+.ring i:nth-child(2):hover {
+  border: 4px solid #470a7c;
+  filter: drop-shadow(0 0 20px #470a7c);
+}
+.ring i:nth-child(3) {
+  width: 120%;
+  height: 120%;
+  animation: animate2 10s linear infinite;
+}
+.ring i:nth-child(3):hover {
+  border: 4px solid #0b4066;
+  filter: drop-shadow(0 0 20px #0b4066);
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes scaleRotateIn {
+  from {
+    transform: scale(0.5) rotate(-15deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.about-title {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+.about-title.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 article {
   display: flex;
   justify-content: center;
@@ -76,7 +206,6 @@ article {
 .carrusel-track {
   display: flex;
   gap: 40px;
-  width: -moz-max-content;
   width: max-content;
   animation: scrollLeft 15s linear infinite;
 }
@@ -99,4 +228,4 @@ article {
   100% {
     transform: translate3d(-50%, 0, 0); /* Desplaza la mitad del ancho del track */
   }
-}/*# sourceMappingURL=carrusel.css.map */
+}
