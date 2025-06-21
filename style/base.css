@@ -604,7 +604,7 @@ h1, h2, p {
 }
 
 h2 {
-  background: linear-gradient(50deg, #f51b9e, #8d07a2, #085c98);
+  background: linear-gradient(50deg, #ff00c8, #dc00ff, #15085c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Lilita One", sans-serif !important;
